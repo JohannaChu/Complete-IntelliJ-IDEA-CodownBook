@@ -1,0 +1,45 @@
+<idea-plugin>
+  <id>team.CodownBook</id>
+  <name>CodownBook</name>
+  <version>1.1</version>
+  <vendor email="chesterzhang666@gmail.com" url="https://github.com/chesterzhang/IntelliJ-IDEA-CodownBook">cityU CS5351 21 fall code-base project group 6</vendor>
+
+  <description><![CDATA[
+      CodownBook is an efficient document generation plugin. It support managing multiple notes and exporting them in a tool window.<br>
+      It can do these works: <br>
+      Extract the function information(function name, return type, paramters, access modifier).<br>
+      Take some notes without modifying the source file .<br>
+      Manage multiple notes in a tool window .<br>
+      Display the notes in a tool window .<br>
+      Export the notes with a given template .<br>
+      Select a path to save the output file .<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Initial version of CodownBook( a document generation plugin of IntelliJ IDEA ).<br>
+    ]]>
+  </change-notes>z
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all -->
+  <depends>com.intellij.modules.lang</depends>
+
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <toolWindow id="CodownBook window" factoryClass="window.BookWindowFactory" anchor="right" />
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="CDBook_PopupAction" class="action.PopupAction" text="Add CodownBook"
+            description="Add CodownBook&#39; s menu">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
